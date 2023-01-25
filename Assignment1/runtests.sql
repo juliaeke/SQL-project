@@ -20,7 +20,6 @@ SET client_min_messages TO NOTICE; -- More talk
 \ir views.sql
 
 
-
 -- Tests various queries from the assignment, uncomment these as you make progress
 SELECT idnr, name, login, program, branch FROM BasicInformation ORDER BY idnr;
 
