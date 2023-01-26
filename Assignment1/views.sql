@@ -1,16 +1,19 @@
 CREATE VIEW BasicInformation AS
-    SELECT idnr, name, login, program
+    SELECT 
+    Students.idnr as idnr,
+    Students.name as name,
+    Students.login as login,
+    Students.program as program,
+    StudentBranches.branch as branch
     FROM Students
-    RIGHT JOIN
-    Branches
-    ON
-    name
+    LEFT JOIN StudentBranches ON idnr = student
     ORDER BY idnr;
-    
-CREATE VIEW FinishedCourses AS
-    (SELECT student, course, grade
-    FROM Taken)
-    UNION
-    (Select credits
-    FROM Courses)
-    ORDER BY student;
+
+CREATE VIEW Test AS
+    SELECT idnr FROM Students;
+
+
+--CREATE VIEW BasicInformation (idnr, name, login, program, branch) AS
+--SELECT idnr, name, login, Students.program, StudentBranches.branch
+--FROM Students 
+--LEFT JOIN StudentBranches ON idnr = student;
