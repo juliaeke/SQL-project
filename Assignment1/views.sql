@@ -9,11 +9,13 @@ CREATE VIEW BasicInformation AS
     LEFT JOIN StudentBranches ON idnr = student
     ORDER BY idnr;
 
-CREATE VIEW Test AS
-    SELECT idnr FROM Students;
+CREATE VIEW FinishedCourses AS
+    SELECT 
+    Taken.student as student,
+    Taken.course as course,
+    Taken.grade as grade,
+    Courses.credits as credits
+    FROM Taken, Courses
+    Where Taken.course = Courses.code
+    ORDER BY student;
 
-
---CREATE VIEW BasicInformation (idnr, name, login, program, branch) AS
---SELECT idnr, name, login, Students.program, StudentBranches.branch
---FROM Students 
---LEFT JOIN StudentBranches ON idnr = student;
