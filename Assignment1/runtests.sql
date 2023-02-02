@@ -30,9 +30,28 @@ SELECT student, course, credits FROM PassedCourses ORDER BY student;
 SELECT student, course, status FROM Registrations ORDER BY student;
 
 --OUR OWN FOR HELPING
-SELECT student, course FROM MandatoryCourses ORDER BY student;
+--SELECT student, course FROM MandatoryCourses ORDER BY student;
 
 SELECT student, course FROM UnreadMandatory ORDER BY student;
+
+--OUR OWN FOR HELPING
+--SELECT student, totalcredits FROM TotalCredits ORDER BY student;
+
+--SELECT student, mandatoryleft FROM MandatoryLeft ORDER BY student;
+
+--SELECT student, mathcredits FROM MathCredits ORDER BY student;
+
+--SELECT student, researchcredits FROM ResearchCredits ORDER BY student;
+
+--SELECT student, seminarcourses FROM SeminarCourses ORDER BY student;
+
+--SELECT student, course, credits FROM RecommendedCourses ORDER BY student;
+
+--SELECT student, course, credits FROM PassedRecommendedCourses ORDER BY student;
+
+--SELECT student, mandatory, recommended, math, research, seminar FROM Requirements ORDER BY student;
+
+--SELECT student, qualified FROM Qualified ORDER BY student;
 
 SELECT student, totalCredits, mandatoryLeft, mathCredits, researchCredits, seminarCourses, qualified FROM PathToGraduation ORDER BY student;
 
