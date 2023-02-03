@@ -159,8 +159,8 @@ CREATE VIEW Qualified AS
         AND Requirements.math >= 20
         AND Requirements.research >= 20
         AND Requirements.seminar >= 1)
-        THEN 't'
-        ELSE 'f'
+        THEN TRUE
+        ELSE FALSE
     END as qualified
     FROM Requirements;
 
