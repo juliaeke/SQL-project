@@ -16,11 +16,13 @@ CREATE TABLE Courses (
     name TEXT NOT NULL,
     credits FLOAT NOT NULL,
     department TEXT NOT NULL
+    CHECK (credits >= 0)
 );
 
 CREATE TABLE LimitedCourses (
     code CHAR(6) REFERENCES Courses(code),
     capacity INT NOT NULL,
+    CHECK (capacity >= 0),
     PRIMARY KEY (code)
 );
 
@@ -73,7 +75,8 @@ CREATE TABLE Registered(
 CREATE TABLE Taken(
     student CHAR(10) REFERENCES Students(idnr),
     course CHAR(6) REFERENCES Courses(code),
-    grade CHAR(1) NOT NULL,
+    grade CHAR(1) NOT NULL
+    CHECK (grade IN ('3', '4', '5', 'U')),
     PRIMARY KEY(student, course)
 );
 
