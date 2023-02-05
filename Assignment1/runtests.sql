@@ -29,7 +29,10 @@ SET client_min_messages TO NOTICE; -- More talk
 
 --SELECT student, course, status FROM Registrations ORDER BY student;
 
-SELECT student, course FROM UnreadMandatory ORDER BY student;
+--SELECT student, course FROM UnreadMandatory ORDER BY student;
+
+SELECT student, totalCredits, mandatoryLeft, mathCredits, researchCredits, seminarCourses, qualified FROM PathToGraduation ORDER BY student;
+
 
 --OUR OWN FOR HELPING
 
@@ -52,8 +55,5 @@ SELECT student, course FROM UnreadMandatory ORDER BY student;
 --SELECT student, mandatory, recommended, math, research, seminar FROM Requirements ORDER BY student;
 
 --SELECT student, qualified FROM Qualified ORDER BY student;
-
---SELECT student, totalCredits, mandatoryLeft, mathCredits, researchCredits, seminarCourses, qualified FROM PathToGraduation ORDER BY student;
-
 
 -- Life-hack: When working on a new view you can write it as a query here (without creating a view) and when it works just add CREATE VIEW and put it in views.sql
