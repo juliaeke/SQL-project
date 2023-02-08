@@ -165,3 +165,4 @@ CREATE VIEW PathToGraduation AS
     LEFT JOIN SeminarCourses ON idnr=SeminarCourses.student
     LEFT JOIN PassedRecommendedCredit ON idnr=PassedRecommendedCredit.student;
     
+    
